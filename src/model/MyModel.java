@@ -1,33 +1,37 @@
 package model;
 
+import java.awt.Color;
+
 /**
  *
  * @author moi
  */
 public class MyModel {
     
-    public String ON_TXT;
-    public String OFF_TXT;
-    public String ON_COLOR;
-    public String OFF_COLOR;
+    //final = constance (en maj) / ne peut pas etre redifini
+    public static final String ON_TXT = "jour";
+    public static final String OFF_TXT = "nuit";
+    public static final Color ON_COLOR = Color.YELLOW;
+    public static final Color OFF_COLOR = Color.GRAY;
     
     private boolean on;
 
-    public boolean MyModel() {
-        
-       // on = x
-        
-        return true;
-    }
+    public MyModel(){}
     
-   public boolean isOn(){
-       return true;
-       
-   }
+    /**
+     * getter
+     * @return on
+     */
+    public boolean isOn(){
+       return on;       
+    }
 
-       
-   public void setOn(boolean on){
-       
-   }
+    /**
+     * setter
+     * @param on 
+     */
+    public void setOn(boolean on){
+       this.on = on;     
+    }
     
 }

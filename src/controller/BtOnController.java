@@ -1,5 +1,6 @@
 package controller;
 
+import java.awt.event.ActionEvent;
 import model.MyModel;
 import view.MyView;
 
@@ -9,8 +10,8 @@ import view.MyView;
  */
 public class BtOnController {
 
-    private final MyModel model;
-    private final MyView view;
+    private MyModel model;
+    private MyView view;
     
     /**
      * 
@@ -18,7 +19,7 @@ public class BtOnController {
     public void BtOnController() {
     }
     
-    public actionPerformed(){
+    public void actionPerformed(ActionEvent e){
         
     }
     
