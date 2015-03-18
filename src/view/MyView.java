@@ -1,7 +1,12 @@
 package view;
 
+import controller.BtOffController;
+import controller.BtOnController;
 import java.awt.*;
 import javax.swing.*;
+import model.MyModel;
+
+
 
 /**
  *
@@ -9,22 +14,23 @@ import javax.swing.*;
  */
 public class MyView extends JFrame{
 
-    private JPanel panelA;
-    private JLabel lbText;
-    private JButton btOn;
-    private JButton btOff;
+    private MyModel model;
+    
+    private JPanel panelA = new JPanel();
+    private JLabel lText = new JLabel("clique");
+    private JButton btOn = new JButton("On");
+    private JButton btOff = new JButton("off");
     
     /**
      * constructeur
+     * @param model
      */
-    public MyView() { 
-        System.out.println("MyView loaded.");
-        panelA = new JPanel();
-         panelA.add(lbText);
-        panelA.add(btOn);
-        panelA.add(btOff);
+    public MyView(MyModel model) { //MyModel model
         
-       // builddUI();
+        this.model = model;
+        System.out.println("MyView loaded.");
+        
+        builddUI();
     }
     
     /**
@@ -33,27 +39,38 @@ public class MyView extends JFrame{
     private void builddUI(){
         System.out.println("builddUI loaded.");
          
-        
-        
-        panelA.add(lbText);
+        panelA.add(lText);
         panelA.add(btOn);
         panelA.add(btOff);
+        add(panelA, BorderLayout.CENTER);
         
-       /* setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         
-        panelA.setLayout(new FlowLayout());
         setLocation(200,200);
-	//pack();
-        setVisible(true);*/
+        setSize(800,600);
+        setVisible(true);
         
+        //gestion d'evenement
+        BtOnController onController = new BtOnController(model, this);
+        BtOffController offController = new BtOffController(model, this);
+        
+        btOn.addActionListener(onController);
+        btOff.addActionListener(offController);
+        
+        getContentPane().add(panelA);
     }
-    /**
+    
+    /** 
      * 
-     * @return 
+     * @param onState
      */
-    public boolean refreshView(){
+    public void refreshView(boolean onState){
         
-        return true;
+        if (onState) {
+            lText.setText(MyModel.ON_TXT);
+        } else {
+            lText.setText(MyModel.OFF_TXT);
+        }
         
     }
     

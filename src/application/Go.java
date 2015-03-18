@@ -1,5 +1,6 @@
 package application;
 
+import model.MyModel;
 import view.MyView;
 /**
  *
@@ -11,7 +12,7 @@ public class Go {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        new MyView(); 
+        new MyView(new MyModel()); 
     }
     
 }

@@ -18,8 +18,12 @@ public class MyModel {
 
     public MyModel(){}
     
+    public MyModel(boolean state){
+        on = state;
+    }
+    
     /**
-     * getter
+     * getter / asseceur
      * @return on
      */
     public boolean isOn(){
@@ -27,7 +31,7 @@ public class MyModel {
     }
 
     /**
-     * setter
+     * setter / mutator
      * @param on 
      */
     public void setOn(boolean on){
