@@ -1,0 +1,3 @@
+n:laul*Power:60
+n:l*Power:10
+n:S*Power:10

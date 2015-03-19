@@ -1,0 +1,2 @@
+n:toto*Power:999
+n:tata*Power:0
