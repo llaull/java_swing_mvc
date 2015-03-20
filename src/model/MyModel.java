@@ -13,6 +13,10 @@ public class MyModel {
     public static final String OFF_TXT = "nuit";
     public static final Color ON_COLOR = Color.YELLOW;
     public static final Color OFF_COLOR = Color.GRAY;
+
+    static void start() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
     
     private boolean on;
 
